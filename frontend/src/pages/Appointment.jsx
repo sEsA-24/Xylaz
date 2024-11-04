@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import { assets } from '../assets/assets';
-import TopDoctors from '../components/TopDoctors';
 import axios from 'axios';
 import * as response from "autoprefixer";
 
@@ -265,7 +264,6 @@ const Appointment = () => {
 
         </div>
         {/*-------Listing Barbers-------*/}
-        <TopDoctors />
       </div>
   );
 };

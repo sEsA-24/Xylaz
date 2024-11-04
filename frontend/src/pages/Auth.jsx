@@ -6,40 +6,37 @@ const Auth = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const [state, setState] = useState('signin');
-  const navigate = useNavigate();
+  const [state, setState] = useState('signin'); // เริ่มต้นที่หน้า Login
+  const navigate = useNavigate(); // ใช้ useNavigate แทน history
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:8085/signin', {
-        username,
-        password
-      });
-      const token = response.data.data.token;
-      if (token) {
-        localStorage.setItem('lastUser', username);
-        localStorage.setItem('token', token);
 
-        // ตรวจสอบถ้าเป็นผู้ดูแลระบบ
-        if (username === 'admin' && password === 'admin1234') {
-          window.location.href = "http://localhost:5174/admin-dashboard"; // ไปที่หน้าแอดมิน
-        } else {
+    const handleLogin = async (e) => {
+      e.preventDefault();
+      try {
+        const response = await axios.post('http://localhost:8085/signin', {
+          username,
+          password
+        });
+        const token = response.data.data.token;  // jwt token
+        if (token) {
+          localStorage.setItem('lastUser', username); // บันทึกชื่อผู้ใช้ล่าสุด
+          localStorage.setItem('token', token); // บันทึก token ใน LocalStorage
           navigate("/");
           window.location.reload();
         }
+      } catch (error) {
+        console.error('Login failed:', error.response?.data || error.message);
+        alert(error.response?.data.message);
       }
-    } catch (error) {
-      console.error('Login failed:', error.response?.data || error.message);
-      alert(error.response?.data.message);
-    }
-  };
+    };
+
+
 
   const handleSignup = async (e) => {
     e.preventDefault();
     if (password.length < 8) {
       alert("Password must be at least 8 characters long.");
-      return;
+      return; // หยุดการทำงานถ้ารหัสผ่านน้อยกว่า 8 ตัว
     }
 
     try {
@@ -49,14 +46,16 @@ const Auth = () => {
         name,
       });
 
+      // ตรวจสอบสถานะ HTTP 200
       if (response.status === 200) {
-        alert("Signup successful");
+        alert("Signup successful"); // แสดงข้อความสำเร็จ
         window.location.reload();
         navigate("/signin");
       }
     } catch (error) {
+      // ตรวจสอบข้อความผิดพลาดที่ได้รับจากเซิร์ฟเวอร์
       const errorMessage = error.response?.data || "Signup failed. Please try again.";
-      alert(errorMessage);
+      alert(errorMessage); // แสดงข้อความผิดพลาด
     }
   };
 
@@ -71,6 +70,7 @@ const Auth = () => {
           </p>
           <p>Please {state === "Sign Up" ? "sign up" : "log in"} to book appointment</p>
 
+          {/* รับ Name แทน Email */}
           {state === "Sign Up" && (
               <div className="w-full">
                 <p>Name</p>

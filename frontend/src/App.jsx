@@ -1,33 +1,32 @@
-import React, { useEffect, useState } from 'react'; // เพิ่ม useEffect และ useState
+import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Payment from './pages/Payment';
-import Doctors from './pages/Doctors';
+import Barbers from './pages/Barbers';
 import Contact from './pages/Contact';
-import Auth from './pages/Auth'; // ตรวจสอบ path ให้ถูกต้อง
+import Auth from './pages/Auth';
 import About from './pages/About';
 import MyProfile from './pages/MyProfile';
 import MyAppointments from './pages/MyAppointments';
 import Appointment from './pages/Appointment';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import './index.css'; // ชื่อไฟล์ CSS ของคุณ
-import axios from 'axios'; // เพิ่ม axios
+import './index.css';
+import axios from 'axios';
 
 const App = () => {
-    const [data, setData] = useState(''); // สถานะสำหรับข้อมูลที่ดึงมา
+    const [data, setData] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:8085'); // URL API ของคุณ
-                // setData(response.data); // อัพเดตสถานะด้วยข้อมูลที่ได้
+                const response = await axios.get('http://localhost:8085');
             } catch (error) {
-                console.error('Error fetching data:', error); // แสดงข้อผิดพลาดในคอนโซล
+                console.error('Error fetching data:', error);
             }
         };
-        fetchData(); // เรียกฟังก์ชันเพื่อดึงข้อมูล
-    }, []); // ใช้ [] เพื่อให้ useEffect ทำงานแค่ครั้งเดียวเมื่อคอมโพเนนต์โหลด
+        fetchData();
+    }, []);
 
     return (
         <div className='mx-4 sm:mx-[10%]'>
@@ -37,9 +36,9 @@ const App = () => {
                 <Route path='/signin' element={<Auth />} /> {/* เปลี่ยนจาก <Home /> เป็น <Login /> */}
                 <Route path='/SignUp' element={<Auth />} /> {/* เปลี่ยนจาก <Home /> เป็น <Login /> */}
                 <Route path='/' element={<Home />} /> {/* เพิ่มเส้นทางสำหรับหน้า Home */}
-                <Route path='/doctors' element={<Doctors />} />
-                <Route path='/doctors/:speciality' element={<Doctors />} />
-                <Route path='/doctors/:topdoctors' element={<Doctors />} />
+                <Route path='/barbers' element={<Barbers />} />
+                <Route path='/barbers/:speciality' element={<Barbers />} />
+                <Route path='/barbers/:topbarbers' element={<Barbers />} />
                 <Route path='/payment' element={<Payment />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
