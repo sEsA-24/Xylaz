@@ -37,6 +37,25 @@ public class AppointmentController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("เกิดข้อผิดพลาดในการจองนัดหมาย");
         }
     }
+    @PatchMapping("/{appointmentId}")
+    public ResponseEntity<Appointment> updateAppointmentStatus(
+            @PathVariable UUID appointmentId, // ใช้ PathVariable เพื่อรับ appointmentId จาก URL
+            @RequestBody Appointment appointmentDetails) {
+
+        Optional<Appointment> optionalAppointment = appointmentRepository.findById(appointmentId);
+
+        if (optionalAppointment.isPresent()) {
+            Appointment appointment = optionalAppointment.get();
+            appointment.setStatus(appointmentDetails.getStatus()); // อัปเดตสถานะตามที่รับมา
+
+            Appointment updatedAppointment = appointmentRepository.save(appointment);
+            return new ResponseEntity<>(updatedAppointment, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // ถ้าไม่พบการนัดหมาย
+        }
+    }
+
+
 
     @GetMapping
     public List<Map<String, Object>> getAllAppointmentData() {
@@ -50,14 +69,17 @@ public class AppointmentController {
                     String date = dateTimeParts[0];
                     String time = dateTimeParts[1];
 
-                    appointmentData.put("id", appointment.getId().toString());  // แปลง UUID เป็น String
-                    appointmentData.put("appointment_date", date);
-                    appointmentData.put("appointment_time", time);
-                    appointmentData.put("service_type", appointment.getServiceType());
-                    appointmentData.put("status", appointment.getStatus());
+                    appointmentData.put("appointmentDate", date);
+                    appointmentData.put("id", appointment.getId().toString());
+                    appointmentData.put("appointmentTime", time);
+                    appointmentData.put("barberId", appointment.getBarber().getId());
+                    appointmentData.put("barberProfilePicture", appointment.getBarber().getProfilePicture());
+                    appointmentData.put("barberName", appointment.getBarber().getName());
+                    appointmentData.put("username",appointment.getMember().getUsername());
+                    appointmentData.put("appointmentId",appointment.getId());
+                    appointmentData.put("status",appointment.getStatus());
                     appointmentData.put("barber_id", appointment.getBarber().getId().toString());  // แปลง UUID เป็น String
-                    appointmentData.put("member_id", appointment.getMember().getId().toString());  // แปลง UUID เป็น String
-
+                    appointmentData.put("member_id", appointment.getMember().getId().toString());
                     return appointmentData;
                 })
                 .collect(Collectors.toList());

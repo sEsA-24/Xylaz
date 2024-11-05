@@ -207,7 +207,7 @@ const Appointment = () => {
             </p>
             <div className='flex items-center gap-2 text-sm mt-1 text-gray-600'>
               <p>{barbers.gender}</p>
-              <button className='py-0.5 px-2 border text-xs rounded-full'>{barbers.experience}</button>
+              <button className='py-0.5 px-2 border text-xs rounded-full'>{barbers.experience+" years"}</button>
             </div>
             <div>
               <p className='flex items-center gap-1 text-sm font-medium text-gray-900 mt-3'>
@@ -216,7 +216,7 @@ const Appointment = () => {
               <p className='text-sm text-gray-500 max-w-[700px] mt-1'>{barbers.about}</p>
             </div>
             <p className='text-gray-500 font-medium mt-4'>
-              Appointment fee: <span className='text-gray-600'>{currencySymbol}{"50"}</span>{/*docInfo.fees*/}
+              Price: <span className='text-gray-600'>{"200 Bath"}</span>{/*docInfo.fees*/}
             </p>
           </div>
         </div>
