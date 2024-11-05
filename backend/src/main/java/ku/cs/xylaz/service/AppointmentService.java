@@ -32,14 +32,11 @@ public class AppointmentService {
     }
 
     public Appointment bookAppointment(String docId, AppointmentRequest request) {
-        // Validate request
         Member member = memberRepository.findByUsername(request.getUsername());
 
-        // ใช้ docId เป็น barberId
         Barber barber = barberRepository.findById(UUID.fromString(docId))
                 .orElseThrow(() -> new RuntimeException("Barber not found"));
 
-        // ตรวจสอบการจองซ้ำ
         String appointmentDate = request.getAppointmentDate();
         List<Appointment> existingAppointments = appointmentRepository.findByBarberAndAppointmentDate(barber, appointmentDate);
 
@@ -47,7 +44,6 @@ public class AppointmentService {
             throw new RuntimeException("Appointment already exists for this barber at the selected date and time.");
         }
 
-        // สร้างนัดหมายใหม่
         Appointment newAppointment = new Appointment();
         newAppointment.setMember(member);
         newAppointment.setBarber(barber);
@@ -55,7 +51,6 @@ public class AppointmentService {
         newAppointment.setStatus("Confirmed");
         newAppointment.setServiceType(request.getServiceType());
 
-        // บันทึกนัดหมาย
         return appointmentRepository.save(newAppointment);
     }
 }

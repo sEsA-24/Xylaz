@@ -34,9 +34,8 @@ public class SecurityConfig {
                     .anyRequest().authenticated()
             )
             .formLogin(form -> form
-                    .loginProcessingUrl("/login") // ใช้ URL สำหรับ POST ที่ต้องการ
+                    .loginProcessingUrl("/login")
                     .successHandler((request, response, authentication) -> {
-                        // คุณสามารถส่ง response เป็น JSON ได้ที่นี่หากต้องการ
                         response.setStatus(HttpServletResponse.SC_OK);
                         response.getWriter().write("Login successful!");
                         response.getWriter().flush();
@@ -75,8 +74,7 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://localhost:5174")); // Allow the frontend origin
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH","DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
-        configuration.setAllowCredentials(true); // Allow cookies if needed
-//        configuration.setAllowedOrigins(Arrays.asList("*")); // ใช้ชั่วคราวสำหรับการทดสอบ
+        configuration.setAllowCredentials(true);
 
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

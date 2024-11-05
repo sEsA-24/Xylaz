@@ -8,7 +8,6 @@ const MyAppointments = () => {
     const [token, setToken] = useState(null);
 
     useEffect(() => {
-        // ตรวจสอบ token ใน localStorage
         const storedToken = localStorage.getItem('token');
         const lastUser = localStorage.getItem('lastUser');
         if (storedToken) {
@@ -23,9 +22,8 @@ const MyAppointments = () => {
             fetch('http://localhost:8085/appointment')
                 .then(response => response.json())
                 .then(data => {
-                    // แปลงข้อมูลการนัดหมายที่ได้จาก API
                     const fetchedAppointments = data
-                        .filter(appointment => appointment.username === user) // กรองตามชื่อผู้ใช้
+                        .filter(appointment => appointment.username === user)
                         .map(appointment => ({
                             date: appointment.appointmentDate,
                             time: appointment.appointmentTime,
@@ -36,13 +34,11 @@ const MyAppointments = () => {
                             id:appointment.appointmentId
                         }));
 
-                    // ตั้งค่า appointments ใหม่ตามข้อมูลที่แปลงแล้ว
                     setAppointments(fetchedAppointments);
                 })
                 .catch(error => console.error('Error fetching appointment info:', error));
         };
 
-        // เรียกใช้ fetchAppointmentInfo เมื่อ user มีค่า
         if (user) {
             fetchAppointmentInfo();
         }
@@ -50,7 +46,6 @@ const MyAppointments = () => {
 
 
     useEffect(() => {
-        // กรองข้อมูลการนัดหมาย
         fetchAppointmentInfo();
     }, [user]);
 
@@ -64,11 +59,9 @@ const MyAppointments = () => {
         e.preventDefault();
         try {
             const response = await axios.patch('http://localhost:8085/appointment', {
-                status: 'payed'  // อัปเดตสถานะเป็น "payed"
+                status: 'payed'
             });
 
-            // ตรวจสอบผลลัพธ์ถ้าต้องการ
-            // console.log('Payment updated successfully:', response.data);
         } catch (error) {
             console.error('Payment failed:', error.response?.data || error.message);
             alert(error.response?.data.message);
@@ -83,7 +76,7 @@ const MyAppointments = () => {
                     <div>
                         <img
                             className='w-32 bg-indigo-50'
-                            src={appointment.barberProfilePicture} // ใช้ profilePicture จาก barberClass
+                            src={appointment.barberProfilePicture}
                             alt=""
                         />
                     </div>

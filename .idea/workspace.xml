@@ -5,82 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfcf7cca-3d76-465e-a4aa-3bf45338cf5f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/context/AdminContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/context/AdminContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/eslint.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/eslint.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/postcss.config.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/postcss.config.cjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/arrow_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/arrow_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/add_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/add_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/admin_logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/admin_logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/appointment_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/appointment_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/appointments_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/appointments_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/assets.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/assets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/cancel_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/cancel_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/doctor_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/doctor_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/earning_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/earning_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/home_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/home_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/list_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/list_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/patient_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/patient_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/patients_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/patients_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/people_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/people_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/tick_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/tick_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_admin/upload_area.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_admin/upload_area.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Dermatologist.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Dermatologist.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Gastroenterologist.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Gastroenterologist.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/General_physician.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/General_physician.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Gynecologist.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Gynecologist.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Neurologist.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Neurologist.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Pediatricians.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Pediatricians.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/arrow_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/arrow_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/assets.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/assets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/chats_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/chats_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/dropdown_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/dropdown_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/info_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/info_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/menu_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/menu_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/verified_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/verified_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/chats_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/chats_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/dropdown_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/dropdown_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/header_imga.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/info_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/info_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/menu_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/menu_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/verified_icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/verified_icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/yo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/authAPI/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/authAPI/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Banner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Banner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/TopBarbers.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/TopDoctors.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/context/AppContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/AppContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/AppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/BarberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/BarberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Barber.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Barber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/service/AppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/service/LoginService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Appointment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Appointment.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Auth.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Barbers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Barbers.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Doctors.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/MyAppointments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MyAppointments.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MyProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MyProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Payment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Payment.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730750687631</updated>
-      <workItem from="1730750689037" duration="637000" />
+      <workItem from="1730750689037" duration="1646000" />
     </task>
     <servers />
   </component>

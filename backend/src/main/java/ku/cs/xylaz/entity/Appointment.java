@@ -18,7 +18,7 @@ public class Appointment {
     @Id
     @GeneratedValue
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    private UUID id; // เปลี่ยนเป็น GenerationType.AUTO
+    private UUID id;
 
     @ManyToOne
     @JoinColumn(name = "member_id", nullable = false)
@@ -31,7 +31,7 @@ public class Appointment {
     @Column(nullable = false)
     private String appointmentDate;
 
-    private String status; // อาจพิจารณาใช้ Enum
+    private String status;
 
     private String serviceType;
 }

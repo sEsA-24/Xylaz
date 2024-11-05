@@ -24,7 +24,7 @@ public class Barber {
     private String name;
 
     private String specialty;
-    private int experience; // จำนวนปีของประสบการณ์
+    private int experience;
     private String profilePicture;
     private String gender;
     private String about;

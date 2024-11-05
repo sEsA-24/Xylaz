@@ -30,13 +30,12 @@ public class BarberController {
     public List<Map<String, Object>> getAllBarberData() {
         return barberRepository.findAll().stream()
                 .map(barber -> {
-                    // สร้างแผนที่ข้อมูลเพื่อส่งไปยัง Frontend
                     Map<String, Object> barberData = new HashMap<>();
-                    barberData.put("barber_id", barber.getId()); // ใช้ barber ID ที่คุณต้องการ
+                    barberData.put("barber_id", barber.getId());
                     barberData.put("name", barber.getName());
                     barberData.put("specialty", barber.getSpecialty());
                     barberData.put("experience", barber.getExperience());
-                    barberData.put("profilePicture", barber.getProfilePicture());// แก้รูป
+                    barberData.put("profilePicture", barber.getProfilePicture());
                     barberData.put("gender", barber.getGender());
                     barberData.put("about", barber.getAbout());
                     return barberData;

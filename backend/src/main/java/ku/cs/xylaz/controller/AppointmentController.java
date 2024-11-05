@@ -44,12 +44,12 @@ public class AppointmentController {
         Optional<Appointment> optionalAppointment = appointmentRepository.findById(id);
         if (optionalAppointment.isPresent()) {
             Appointment appointment = optionalAppointment.get();
-            appointment.setStatus(appointmentDetails.getStatus()); // อัปเดตสถานะ
+            appointment.setStatus(appointmentDetails.getStatus());
 
             Appointment updatedAppointment = appointmentRepository.save(appointment);
             return new ResponseEntity<>(updatedAppointment, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // ถ้าไม่พบการนัดหมาย
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -59,12 +59,12 @@ public class AppointmentController {
         return appointmentRepository.findAll().stream()
                 .map(appointment -> {
                     Map<String, Object> appointmentData = new HashMap<>();
-                    String appointmentDateTime = appointment.getAppointmentDate(); // ได้ในรูปแบบ "2024-11-05 10:30"
+                    String appointmentDateTime = appointment.getAppointmentDate();
 
                     // แยกวันที่และเวลา
                     String[] dateTimeParts = appointmentDateTime.split(" ");
-                    String date = dateTimeParts[0]; // ได้วันที่
-                    String time = dateTimeParts[1]; // ได้เวลา
+                    String date = dateTimeParts[0];
+                    String time = dateTimeParts[1];
 
                     appointmentData.put("appointmentDate", date);
                     appointmentData.put("appointmentTime", time);
