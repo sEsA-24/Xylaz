@@ -4,78 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfcf7cca-3d76-465e-a4aa-3bf45338cf5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/picture/barber4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/picture/barber6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/picture/barber7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/picture/barber8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Dermatologist.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Gastroenterologist.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/General_physician.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Gynecologist.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Neurologist.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/Pediatricians.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/about_image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/appointment_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/arrow_icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/assets.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/chats_icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/contact_image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/cross_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/doc9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/dropdown_icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/group_profiles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/header_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/info_icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/menu_icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/profile_pic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/razorpay_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/stripe_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/stylist1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/upload_area.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/upload_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/assets_frontend/verified_icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/doc9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/profile_pic.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/profile_pic.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Appointment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Appointment.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MyAppointments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MyAppointments.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/pages/BarberList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/pages/BarberList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/AppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Appointment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Appointment.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="dfcf7cca-3d76-465e-a4aa-3bf45338cf5f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,24 +28,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/cactus/Desktop/Xylaz/frontend/src/assets",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/cactus/Desktop/Xylaz/frontend/src/assets&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/src/assets" />
