@@ -44,7 +44,7 @@ const MyAppointments = () => {
             fetchAppointmentInfo();
         }
     }, [user]);
-    
+
     const handlePay = async (appointmentId) => {
         try {
             await axios.patch(
@@ -56,24 +56,6 @@ const MyAppointments = () => {
             // เพิ่ม appointmentId ที่ชำระแล้วลงใน paidAppointments
             setPaidAppointments([...paidAppointments, appointmentId]);
             setShowPopup(true);
-
-    useEffect(() => {
-        fetchAppointmentInfo();
-    }, [user]);
-
-    const fetchAppointmentInfo = () => {
-        const appointmentInfo = appointments.filter(
-            (appointment) => appointment.name === user
-        );
-        setAppointments(appointmentInfo);
-    };
-    const handlePay = async (e, appointmentId) => {
-        e.preventDefault();
-        try {
-            const response = await axios.patch('http://localhost:8085/appointment', {
-                status: 'payed'
-            });
-            
         } catch (error) {
             console.error('Payment failed:', error.response?.data || error.message);
             alert(error.response?.data?.message || "An error occurred while processing payment.");
@@ -85,11 +67,6 @@ const MyAppointments = () => {
                 <div className='grid grid-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-2 border-b' key={index}>
                     <div>
                         <img className='w-32 bg-indigo-50' src={appointment.barberProfilePicture} alt="" />
-                        <img
-                            className='w-32 bg-indigo-50'
-                            src={appointment.barberProfilePicture}
-                            alt=""
-                        />
                     </div>
                     <div className='flex-1 text-sm text-zinc-600'>
                         <p className='text-neutral-800 font-semibold'>{appointment.barberName}</p>
