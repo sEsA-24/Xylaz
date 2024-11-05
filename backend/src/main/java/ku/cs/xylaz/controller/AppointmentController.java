@@ -39,12 +39,16 @@ public class AppointmentController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("เกิดข้อผิดพลาดในการจองนัดหมาย");
         }
     }
-    @PatchMapping
-    public ResponseEntity<Appointment> updateAppointmentStatus(@PathVariable UUID id, @RequestBody Appointment appointmentDetails) {
-        Optional<Appointment> optionalAppointment = appointmentRepository.findById(id);
+    @PatchMapping("/{appointmentId}")
+    public ResponseEntity<Appointment> updateAppointmentStatus(
+            @PathVariable UUID appointmentId, // ใช้ PathVariable เพื่อรับ appointmentId จาก URL
+            @RequestBody Appointment appointmentDetails) {
+
+        Optional<Appointment> optionalAppointment = appointmentRepository.findById(appointmentId);
+
         if (optionalAppointment.isPresent()) {
             Appointment appointment = optionalAppointment.get();
-            appointment.setStatus(appointmentDetails.getStatus()); // อัปเดตสถานะ
+            appointment.setStatus(appointmentDetails.getStatus()); // อัปเดตสถานะตามที่รับมา
 
             Appointment updatedAppointment = appointmentRepository.save(appointment);
             return new ResponseEntity<>(updatedAppointment, HttpStatus.OK);
@@ -52,6 +56,8 @@ public class AppointmentController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND); // ถ้าไม่พบการนัดหมาย
         }
     }
+
+
 
 
     @GetMapping
@@ -73,6 +79,7 @@ public class AppointmentController {
                     appointmentData.put("barberName", appointment.getBarber().getName());
                     appointmentData.put("username",appointment.getMember().getUsername());
                     appointmentData.put("appointmentId",appointment.getId());
+                    appointmentData.put("status",appointment.getStatus());
                     return appointmentData;
                 })
                 .collect(Collectors.toList());

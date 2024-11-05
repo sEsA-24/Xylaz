@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 
 const MyAppointments = () => {
-    const [barbers, setBarbers] = useState([]);
     const [appointments, setAppointments] = useState([]);
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
+    const [paidAppointments, setPaidAppointments] = useState([]); // เก็บ appointmentId ที่จ่ายแล้ว
 
     useEffect(() => {
-        // ตรวจสอบ token ใน localStorage
         const storedToken = localStorage.getItem('token');
         const lastUser = localStorage.getItem('lastUser');
         if (storedToken) {
@@ -17,73 +16,56 @@ const MyAppointments = () => {
         }
     }, []);
 
-
     useEffect(() => {
         const fetchAppointmentInfo = () => {
             fetch('http://localhost:8085/appointment')
                 .then(response => response.json())
                 .then(data => {
-                    // แปลงข้อมูลการนัดหมายที่ได้จาก API
                     const fetchedAppointments = data
-                        .filter(appointment => appointment.username === user) // กรองตามชื่อผู้ใช้
+                        .filter(appointment => appointment.username === user)
                         .map(appointment => ({
                             date: appointment.appointmentDate,
                             time: appointment.appointmentTime,
                             stylistClass: appointment.barberClass,
                             name: appointment.username,
                             barberName: appointment.barberName,
-                            barberProfilePicture:appointment.barberProfilePicture,
-                            id:appointment.appointmentId
+                            barberProfilePicture: appointment.barberProfilePicture,
+                            id: appointment.appointmentId,
+                            status: appointment.status // เพิ่มสถานะการชำระเงิน
                         }));
-
-                    // ตั้งค่า appointments ใหม่ตามข้อมูลที่แปลงแล้ว
                     setAppointments(fetchedAppointments);
                 })
                 .catch(error => console.error('Error fetching appointment info:', error));
         };
 
-        // เรียกใช้ fetchAppointmentInfo เมื่อ user มีค่า
         if (user) {
             fetchAppointmentInfo();
         }
     }, [user]);
 
-
-    useEffect(() => {
-        // กรองข้อมูลการนัดหมาย
-        fetchAppointmentInfo();
-    }, [user]);
-
-    const fetchAppointmentInfo = () => {
-        const appointmentInfo = appointments.filter(
-            (appointment) => appointment.name === user
-        );
-        setAppointments(appointmentInfo);
-    };
-    const handlePay = async (e, appointmentId) => {
-        e.preventDefault();
+    const handlePay = async (appointmentId) => {
         try {
-            const response = await axios.patch('http://localhost:8085/appointment', {
-                status: 'payed'  // อัปเดตสถานะเป็น "payed"
-            });
+            await axios.patch(
+                `http://localhost:8085/appointment/${appointmentId}`,
+                { status: 'payed' },
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
 
-            // ตรวจสอบผลลัพธ์ถ้าต้องการ
-            // console.log('Payment updated successfully:', response.data);
+            // เพิ่ม appointmentId ที่ชำระแล้วลงใน paidAppointments
+            setPaidAppointments([...paidAppointments, appointmentId]);
         } catch (error) {
             console.error('Payment failed:', error.response?.data || error.message);
-            alert(error.response?.data.message);
+            alert(error.response?.data?.message || "An error occurred while processing payment.");
         }
     };
-
-
-    return appointments &&(
+    return (
         <div>
             {appointments.map((appointment, index) => (
                 <div className='grid grid-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-2 border-b' key={index}>
                     <div>
                         <img
                             className='w-32 bg-indigo-50'
-                            src={appointment.barberProfilePicture} // ใช้ profilePicture จาก barberClass
+                            src={appointment.barberProfilePicture}
                             alt=""
                         />
                     </div>
@@ -93,18 +75,21 @@ const MyAppointments = () => {
                             <span className='text-sm text-neutral-700 font-medium'>Date & Time:</span> {appointment.date} | {appointment.time}
                         </p>
                     </div>
-                    <div className='flex flex-col gap-2 justify-end'>
-                        <button onClick={(e) => handlePay(e, appointment.id)} className='text-sm text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-primary hover:text-white transition-all duration-300'>
-                            Pay Online
-                        </button>
-                        <button className='text-sm text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-red-600 hover:text-white transition-all duration-300'>Cancel appointment</button>
+                    <div className='flex flex-col gap-2 justify-center items-center h-full mt-7 mr-12 '>
+                        {paidAppointments.includes(appointment.id) || appointment.status === 'payed' ? (
+                            <span className='text-sm text-green-600 font-semibold'>PAYED</span>
+                        ) : (
+                            <button onClick={() => handlePay(appointment.id)} className='text-sm text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-primary hover:text-white transition-all duration-300 mt 1 ml-1'>
+                                Pay Online
+                            </button>
+                        )}
                     </div>
                 </div>
             ))}
         </div>
+    );
 
 
-    )
 }
 
-export default MyAppointments
+export default MyAppointments;
