@@ -4,7 +4,6 @@ const BarberList = () => {
     const [barbers, setBarbers] = useState([]);
 
     useEffect(() => {
-        // เรียกใช้ API เพื่อดึงข้อมูลบาร์เบอร์
         fetch('http://localhost:8085/')
             .then(response => response.json())
             .then(data => {

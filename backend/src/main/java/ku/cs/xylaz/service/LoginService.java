@@ -19,13 +19,12 @@ import java.util.Map;
 public class LoginService {
     private final MemberRepository repository;
     private final PasswordEncoder passwordEncoder;
-//    private final AuthenticationManager authenticationManager;
 
     @Value("${jwt.secret}")
-    private String jwtSecret; // เก็บ secret key สำหรับสร้าง JWT
+    private String jwtSecret;
 
     @Value("${jwt.expiration.ms}")
-    private long jwtExpiration; // อายุการใช้งานของ token (มิลลิวินาที)
+    private long jwtExpiration;
 
     public LoginService(MemberRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
@@ -38,7 +37,6 @@ public class LoginService {
             throw new IllegalArgumentException("Invalid username or password");
         }
 
-        // สร้าง JWT Token
         return generateToken(member);
     }
 
@@ -48,7 +46,6 @@ public class LoginService {
         claims.put("username", member.getUsername());
         claims.put("role", member.getRole());
 
-        // สร้าง Token โดยใช้ JJWT library
         return Jwts.builder()
                 .setClaims(claims)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
@@ -59,16 +56,13 @@ public class LoginService {
     }
     public Boolean validateToken(String token) {
         try {
-            // ตรวจสอบว่า token ถูกต้องและยังไม่หมดอายุ
             Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token);
-            return true; // Token ยัง valid
+            return true;
         } catch (ExpiredJwtException e) {
-            // Token หมดอายุ
             System.out.println("Token expired");
-            return false; // Token ไม่ valid
+            return false;
         } catch (Exception e) {
-            // ข้อผิดพลาดอื่น ๆ
-            return false; // Token ไม่ valid
+            return false;
         }
     }
 

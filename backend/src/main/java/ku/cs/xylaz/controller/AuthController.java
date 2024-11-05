@@ -40,14 +40,11 @@ public class AuthController {
     @PostMapping("/signin")
     public ResponseEntity<ApiResponse<LoginResponse>> login(@RequestBody LoginRequest loginRequest) {
         try {
-            // ตรวจสอบ username และ password แล้วสร้าง token
             String token = authService.authenticate(loginRequest.getUsername(), loginRequest.getPassword());
 
-            // สร้าง Response ที่มี token
             LoginResponse loginResponse = new LoginResponse(token, loginRequest.getUsername());
             ApiResponse<LoginResponse> apiResponse = new ApiResponse<>(true, "Sign-in successful", loginResponse);
 
-            // ส่ง Response กลับ
             return ResponseEntity.ok(apiResponse);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)

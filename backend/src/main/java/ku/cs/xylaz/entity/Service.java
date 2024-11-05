@@ -25,5 +25,5 @@ public class Service {
 
     private String description;
     private double price;
-    private int duration; // ระยะเวลาในหน่วยนาที
+    private int duration;
 }

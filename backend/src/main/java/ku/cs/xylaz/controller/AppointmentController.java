@@ -1,11 +1,7 @@
 package ku.cs.xylaz.controller;
 
 import ku.cs.xylaz.entity.Appointment;
-import ku.cs.xylaz.entity.Barber;
-import ku.cs.xylaz.entity.Member;
 import ku.cs.xylaz.repository.AppointmentRepository;
-import ku.cs.xylaz.repository.BarberRepository;
-import ku.cs.xylaz.repository.MemberRepository;
 import ku.cs.xylaz.request.AppointmentRequest;
 import ku.cs.xylaz.service.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +17,7 @@ import java.util.stream.Collectors;
 public class AppointmentController {
 
     private final AppointmentService appointmentService;
+
     @Autowired
     private AppointmentRepository appointmentRepository;
 
@@ -28,6 +25,7 @@ public class AppointmentController {
     public AppointmentController(AppointmentService appointmentService) {
         this.appointmentService = appointmentService;
     }
+
     @PostMapping("/{docId}")
     public ResponseEntity<?> bookAppointment(@PathVariable String docId, @RequestBody AppointmentRequest request) {
         try {
@@ -59,20 +57,20 @@ public class AppointmentController {
 
 
 
-
     @GetMapping
     public List<Map<String, Object>> getAllAppointmentData() {
         return appointmentRepository.findAll().stream()
                 .map(appointment -> {
                     Map<String, Object> appointmentData = new HashMap<>();
-                    String appointmentDateTime = appointment.getAppointmentDate(); // ได้ในรูปแบบ "2024-11-05 10:30"
+                    String appointmentDateTime = appointment.getAppointmentDate();
 
                     // แยกวันที่และเวลา
                     String[] dateTimeParts = appointmentDateTime.split(" ");
-                    String date = dateTimeParts[0]; // ได้วันที่
-                    String time = dateTimeParts[1]; // ได้เวลา
+                    String date = dateTimeParts[0];
+                    String time = dateTimeParts[1];
 
                     appointmentData.put("appointmentDate", date);
+                    appointmentData.put("id", appointment.getId().toString());
                     appointmentData.put("appointmentTime", time);
                     appointmentData.put("barberId", appointment.getBarber().getId());
                     appointmentData.put("barberProfilePicture", appointment.getBarber().getProfilePicture());
@@ -80,12 +78,10 @@ public class AppointmentController {
                     appointmentData.put("username",appointment.getMember().getUsername());
                     appointmentData.put("appointmentId",appointment.getId());
                     appointmentData.put("status",appointment.getStatus());
+                    appointmentData.put("barber_id", appointment.getBarber().getId().toString());  // แปลง UUID เป็น String
+                    appointmentData.put("member_id", appointment.getMember().getId().toString());
                     return appointmentData;
                 })
                 .collect(Collectors.toList());
     }
-
-
 }
-
-

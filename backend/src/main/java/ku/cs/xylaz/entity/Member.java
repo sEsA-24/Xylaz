@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Data
 @Entity
-@Table(name = "members") // กำหนดชื่อตารางในฐานข้อมูล
+@Table(name = "members")
 public class Member {
     @Id
     @GeneratedValue
@@ -16,16 +16,16 @@ public class Member {
     @Column(name = "member_id", updatable = false, nullable = false)
     private UUID id;
 
-    @Column(nullable = false, unique = true) // ค่าที่ไม่ซ้ำกัน
+    @Column(nullable = false, unique = true)
     private String username;
 
-    @Column(nullable = false) // รหัสผ่านจะต้องมีค่า
+    @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false) // ชื่อจะต้องมีค่า
+    @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false) // ระบุบทบาท
+    @Column(nullable = false)
     private String role;
 
     private String email;
