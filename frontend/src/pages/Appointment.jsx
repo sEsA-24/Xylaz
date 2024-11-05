@@ -100,7 +100,7 @@ const Appointment = () => {
     };
 
     try {
-      const token = localStorage.getItem("token"); // ดึง token จาก LocalStorage
+      const token = localStorage.getItem("token");
 
       const response = await axios.post(`http://localhost:8085/appointment/${docId}`, requestBody, {
         headers: {
@@ -110,7 +110,7 @@ const Appointment = () => {
       });
 
       if (response.status === 200 || response.status === 201) {
-        alert("จองนัดหมายเรียบร้อยแล้ว!"+appointmentDate);
+        alert("Appointment booked successfully!"+appointmentDate);
         const newAppointment = { date: selectedDate.toISOString().split('T')[0], time: `${String(selectedDate.getHours()).padStart(2, '0')}:${String(selectedDate.getMinutes()).padStart(2, '0')}`, barber: docId };
         updateSlotStatus([newAppointment]);
       } else {
@@ -126,7 +126,7 @@ const Appointment = () => {
   };
 
   const getAvailableSlots = async () => {
-    const slots = []; // สร้าง array เพื่อเก็บ slots ทั้งหมด
+    const slots = [];
     let today = new Date();
 
     for (let i = 0; i < 7; i++) {
@@ -172,7 +172,6 @@ const Appointment = () => {
       const updatedSlots = [...prevSlots];
 
       appointments.forEach(appointment => {
-        // log to see current state of slots
         const dayIndex = updatedSlots.findIndex(daySlots =>
             daySlots.some(slot =>
                 slot.dateTime.toISOString().split('T')[0] === appointment.date
