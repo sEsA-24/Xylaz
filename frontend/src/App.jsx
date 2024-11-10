@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import Payment from './pages/Payment';
+import Receipt from './pages/Receipt';
 import Barbers from './pages/Barbers';
 import Contact from './pages/Contact';
 import Auth from './pages/Auth';
@@ -39,7 +39,7 @@ const App = () => {
                 <Route path='/barbers' element={<Barbers />} />
                 <Route path='/barbers/:speciality' element={<Barbers />} />
                 <Route path='/barbers/:topbarbers' element={<Barbers />} />
-                <Route path='/payment' element={<Payment />} />
+                <Route path='/receipt/:appointmentId' element={<Receipt />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/my-profile' element={<MyProfile />} />

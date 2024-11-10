@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 const MyAppointments = () => {
+    const navigate = useNavigate();
     const [appointments, setAppointments] = useState([]);
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
@@ -33,7 +35,7 @@ const MyAppointments = () => {
                             barberName: appointment.barberName,
                             barberProfilePicture: appointment.barberProfilePicture,
                             id: appointment.appointmentId,
-                            status: appointment.status // เพิ่มสถานะการชำระเงิน
+                            status: appointment.status
                         }));
                     setAppointments(fetchedAppointments);
                 })
@@ -49,11 +51,10 @@ const MyAppointments = () => {
         try {
             await axios.patch(
                 `http://localhost:8085/appointment/${appointmentId}`,
-                { status: 'payed' },
+                { status: 'paid' },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
-
-            // เพิ่ม appointmentId ที่ชำระแล้วลงใน paidAppointments
+            
             setPaidAppointments([...paidAppointments, appointmentId]);
             setShowPopup(true);
         } catch (error) {
@@ -73,16 +74,33 @@ const MyAppointments = () => {
                         <p className='text-xs mt-1'>
                             <span className='text-sm text-neutral-700 font-medium'>Date & Time:</span> {appointment.date} | {appointment.time}
                         </p>
+                        {paidAppointments.includes(appointment.id) || appointment.status === 'paid' ? (
+                            <span className='text-sm text-green-600 font-semibold mt-2 block'>PAID</span> // เพิ่ม mt-2 และ block
+                        ) :
+                            <span className='text-sm text-red-600 font-semibold mt-2 block'>UNPAID</span>}
                     </div>
-                    <div className='flex flex-col gap-2 justify-center items-center h-full mt-7 mr-12'>
-                        {paidAppointments.includes(appointment.id) || appointment.status === 'payed' ? (
-                            <span className='text-sm text-green-600 font-semibold'>PAYED</span>
-                        ) : (
-                            <button onClick={() => handlePay(appointment.id)} className='text-sm text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-primary hover:text-white transition-all duration-300 mt-1 ml-1'>
-                                Pay Online
+                    <div className='flex flex-col gap-2 justify-center items-center h-full '>
+                        {paidAppointments.includes(appointment.id) || appointment.status === 'paid' ? (
+                            <button
+                                onClick={() => navigate(`/receipt/${appointment.id}`)}
+                                className='text-sm text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-primary hover:text-white transition-all duration-300 mt-6'>
+                                Receipt
                             </button>
+                        ) : (
+                            <>
+                                <button
+                                    onClick={() => handlePay(appointment.id)}
+                                    className='text-sm text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-green-600 hover:text-white transition-all duration-300'>
+                                    Pay Online
+                                </button>
+                                <button
+                                    className='text-sm text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-red-600 hover:text-white transition-all duration-300'>
+                                    Cancel appointment
+                                </button>
+                            </>
                         )}
                     </div>
+
                 </div>
             ))}
 

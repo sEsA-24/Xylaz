@@ -39,22 +39,21 @@ public class AppointmentController {
     }
     @PatchMapping("/{appointmentId}")
     public ResponseEntity<Appointment> updateAppointmentStatus(
-            @PathVariable UUID appointmentId, // ใช้ PathVariable เพื่อรับ appointmentId จาก URL
+            @PathVariable UUID appointmentId,
             @RequestBody Appointment appointmentDetails) {
 
         Optional<Appointment> optionalAppointment = appointmentRepository.findById(appointmentId);
 
         if (optionalAppointment.isPresent()) {
             Appointment appointment = optionalAppointment.get();
-            appointment.setStatus(appointmentDetails.getStatus()); // อัปเดตสถานะตามที่รับมา
+            appointment.setStatus(appointmentDetails.getStatus());
 
             Appointment updatedAppointment = appointmentRepository.save(appointment);
             return new ResponseEntity<>(updatedAppointment, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // ถ้าไม่พบการนัดหมาย
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
 
 
     @GetMapping
@@ -64,7 +63,6 @@ public class AppointmentController {
                     Map<String, Object> appointmentData = new HashMap<>();
                     String appointmentDateTime = appointment.getAppointmentDate();
 
-                    // แยกวันที่และเวลา
                     String[] dateTimeParts = appointmentDateTime.split(" ");
                     String date = dateTimeParts[0];
                     String time = dateTimeParts[1];
@@ -78,7 +76,7 @@ public class AppointmentController {
                     appointmentData.put("username",appointment.getMember().getUsername());
                     appointmentData.put("appointmentId",appointment.getId());
                     appointmentData.put("status",appointment.getStatus());
-                    appointmentData.put("barber_id", appointment.getBarber().getId().toString());  // แปลง UUID เป็น String
+                    appointmentData.put("barber_id", appointment.getBarber().getId().toString());
                     appointmentData.put("member_id", appointment.getMember().getId().toString());
                     return appointmentData;
                 })

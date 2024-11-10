@@ -25,7 +25,6 @@ public class AuthController {
     private MemberRepository memberRepository;
 
 
-    //    // สำหรับลงทะเบียน
     @PostMapping("/signup")
     public ResponseEntity<String> signupUser(@RequestBody SignupRequest user) {
 
