@@ -2,6 +2,7 @@ package ku.cs.xylaz.controller;
 
 import ku.cs.xylaz.entity.Barber;
 import ku.cs.xylaz.repository.BarberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/")
 public class BarberController {
+    @Autowired
     private final BarberRepository barberRepository;
 
     public BarberController(BarberRepository barberRepository) {

@@ -19,9 +19,9 @@ const AddBarber = () => {
     const onSubmitHandler = async (event) => {
         event.preventDefault();
 
-        if (!profilePicture) {
-            return toast.error('Profile picture is not selected');
-        }
+        // if (!profilePicture) {
+        //     return toast.error('Profile picture is not selected');
+        // }
 
         const formData = new FormData();
         formData.append('profilePicture', profilePicture);
@@ -35,14 +35,22 @@ const AddBarber = () => {
             // เพิ่มคำขอไปยัง backend ด้วยข้อมูลของช่างตัดผม (barber)
             const token = localStorage.getItem('token'); // Assuming you store the token in localStorage
 
-            const response = await axios.post('http://localhost:8085/api/admin/add-barber', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    'Authorization': `Bearer ${token}`
-                }
+            const response = await axios.post('http://localhost:8085/addBarber', {
+                // profilePicture,
+                specialty,
+                gender,
+                name,
+                about,
+                experience,
             });
 
             if (response.status === 200 || response.status === 201) {
+                console.error(profilePicture,
+                    specialty,
+                    gender,
+                    name,
+                    about,
+                    experience,)
                 toast.success('Barber added successfully!');
                 // Reset form fields
                 setProfilePicture(null);

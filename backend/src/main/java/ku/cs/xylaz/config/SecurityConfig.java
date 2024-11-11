@@ -29,7 +29,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests((requests) -> requests
-                    .requestMatchers("/", "/signup", "/signin","/appointment/*","/addBarber","/appointment").permitAll()
+                    .requestMatchers("/", "/signup", "/signin","/appointment/*","/addBarber","/appointment","/pokemon").permitAll()
                     .requestMatchers("/menus/add", "/categories/add", "/admin/**").hasRole("ADMIN")
                     .anyRequest().authenticated()
             )
