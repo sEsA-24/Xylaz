@@ -10,7 +10,6 @@ const Navbar = () => {
             setAToken('');
             localStorage.removeItem('aToken');
         }
-        // Redirect to the sign-in page on localhost:3000
         window.location.href = 'http://localhost:3000/signin';
     };
 

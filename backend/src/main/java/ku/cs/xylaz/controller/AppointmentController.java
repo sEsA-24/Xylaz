@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/appointment")
 public class AppointmentController {
-
     private final AppointmentService appointmentService;
 
     @Autowired
@@ -55,7 +54,6 @@ public class AppointmentController {
         }
     }
 
-
     @GetMapping
     public List<Map<String, Object>> getAllAppointmentData() {
         return appointmentRepository.findAll().stream()
@@ -78,6 +76,8 @@ public class AppointmentController {
                     appointmentData.put("status",appointment.getStatus());
                     appointmentData.put("barber_id", appointment.getBarber().getId().toString());
                     appointmentData.put("member_id", appointment.getMember().getId().toString());
+                    appointmentData.put("service_type", appointment.getServiceType());
+                    appointmentData.put("appointment_date", appointment.getAppointmentDate());
                     return appointmentData;
                 })
                 .collect(Collectors.toList());

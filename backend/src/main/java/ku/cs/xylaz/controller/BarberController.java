@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/")
 public class BarberController {
-
     private final BarberRepository barberRepository;
 
     public BarberController(BarberRepository barberRepository) {
@@ -26,6 +25,7 @@ public class BarberController {
         Barber savedBarber = barberRepository.save(barber);
         return new ResponseEntity<>(savedBarber, HttpStatus.CREATED);
     }
+
     @GetMapping("/")
     public List<Map<String, Object>> getAllBarberData() {
         return barberRepository.findAll().stream()
@@ -42,5 +42,4 @@ public class BarberController {
                 })
                 .collect(Collectors.toList());
     }
-
 }

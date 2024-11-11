@@ -16,14 +16,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/")
 public class AuthController {
-
     @Autowired
     private SignupService signupService;
     @Autowired
     private LoginService authService;
     @Autowired
     private MemberRepository memberRepository;
-
 
     @PostMapping("/signup")
     public ResponseEntity<String> signupUser(@RequestBody SignupRequest user) {
@@ -49,8 +47,5 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(new ApiResponse<>(false, "Sign-in failed: " + e.getMessage(), null));
         }
-
     }
-
-
 }
