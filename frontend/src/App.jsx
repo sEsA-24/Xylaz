@@ -29,7 +29,7 @@ const App = () => {
     }, []);
 
     return (
-        <div className='mx-4 sm:mx-[10%]'>
+        <div className=' pt-[4.7rem]'>
             <Navbar />
             <h1>{data}</h1> {/* แสดงข้อมูลที่ดึงมา */}
             <Routes>

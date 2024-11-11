@@ -28,9 +28,9 @@ const Navbar = () => {
   };
 
   return (
-      <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400'>
-        <p onClick={() => navigate('/')} className='w-44 cursor-pointer text-5xl font-semibold text-[#000b6d]'>Xylaz :)</p>
-        <ul className='hidden md:flex items-start gap-5 font-medium'>
+      <div className='flex items-center justify-between text-sm py-4 mb-5 fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-90'>
+      <p onClick={() => navigate('/')} className='md:mx-10 w-44 cursor-pointer text-5xl font-bold text-[#000b6d]'>XYLAZ</p>
+        <ul className='hidden md:flex items-start gap-20 font-medium ml-20'>
           <NavLink to='/'>
             <li className='py-1'>HOME</li>
             <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden'/>
@@ -48,7 +48,7 @@ const Navbar = () => {
             <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden'/>
           </NavLink>
         </ul>
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-4 mr-10'>
           {
             token
                 ? <div className='flex items-center gap-2 cursor-pointer group relative'>
