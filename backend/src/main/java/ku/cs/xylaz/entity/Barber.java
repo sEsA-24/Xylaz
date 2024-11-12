@@ -14,10 +14,11 @@ import java.util.UUID;
 @Entity
 @Table(name = "barbers")
 public class Barber {
+
     @Id
     @GeneratedValue
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "barber_id")
+    @Column(name = "barber_id", updatable = false, nullable = false)
     private UUID id;
 
     @Column(nullable = false)

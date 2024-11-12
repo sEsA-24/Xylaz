@@ -1,6 +1,6 @@
 import React from 'react'
 import Login from './pages/Login.jsx'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar.jsx'
 import { useContext } from 'react'
@@ -12,6 +12,7 @@ import AddBarber from './pages/AddBarber.jsx';
 import BarberList from './pages/BarberList.jsx';
 import AllAppointments from './pages/AllAppointment.jsx';
 import Receipt from './pages/Receipt.jsx';
+import BarberSalary from './pages/BarberSalary.jsx'; // นำเข้า BarberSalary component
 
 const App = () => {
 
@@ -24,12 +25,13 @@ const App = () => {
             <div className='flex items-start'>
                 <Bar/>
                 <Routes>
-                    <Route path='/' element = {<></>}/>
-                    <Route path='/admin-dashboard' element = {<Dashboard/>}/>
-                    <Route path='/all-appointment' element = {<AllAppointments/>}/>
-                    <Route path='/add-barber' element = {<AddBarber/>}/>
-                    <Route path='/barber-list' element = {<BarberList/>}/>
-                    <Route path='/receipt' element = {<Receipt/>}/>
+                    <Route path='/' element={<></>}/>
+                    <Route path='/admin-dashboard' element={<Dashboard/>}/>
+                    <Route path='/all-appointment' element={<AllAppointments/>}/>
+                    <Route path='/add-barber' element={<AddBarber/>}/>
+                    <Route path='/barber-list' element={<BarberList/>}/>
+                    <Route path='/receipt' element={<Receipt/>}/>
+                    <Route path='/barber-salary/:barber_id' element={<BarberSalary/>}/> {/* เพิ่มเส้นทางนี้ */}
                 </Routes>
             </div>
         </div>

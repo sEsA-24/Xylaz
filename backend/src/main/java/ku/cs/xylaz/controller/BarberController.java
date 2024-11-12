@@ -28,6 +28,7 @@ public class BarberController {
         return new ResponseEntity<>(savedBarber, HttpStatus.CREATED);
     }
 
+
     @GetMapping("/")
     public List<Map<String, Object>> getAllBarberData() {
         return barberRepository.findAll().stream()
