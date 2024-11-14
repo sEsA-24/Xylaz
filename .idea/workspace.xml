@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfcf7cca-3d76-465e-a4aa-3bf45338cf5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/src/pages/BarberSalary.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/pages/BarberList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/pages/BarberList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/pages/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/BarberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/BarberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Barber.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Barber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/pages/BarberSalary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/pages/BarberSalary.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +57,9 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/src/picture" />
@@ -87,7 +85,8 @@
       <updated>1730750687631</updated>
       <workItem from="1730750689037" duration="3745000" />
       <workItem from="1731052255527" duration="41243000" />
-      <workItem from="1731344013795" duration="16736000" />
+      <workItem from="1731344013795" duration="19433000" />
+      <workItem from="1731520573534" duration="4433000" />
     </task>
     <servers />
   </component>
