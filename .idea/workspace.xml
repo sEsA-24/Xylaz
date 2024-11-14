@@ -5,12 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfcf7cca-3d76-465e-a4aa-3bf45338cf5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/request/BarberRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/picture/banner_pic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/picture/barber.5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/picture/barber4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/picture/barber6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/picture/barber7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/picture/barber8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/picture/icon-header.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/picture/iconbackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/picture/qr_code.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/picture/tick-circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/prototype.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/pages/AddBarber.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/pages/AddBarber.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/pages/BarberList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/pages/BarberList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/BarberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/controller/BarberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/request/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Barber.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ku/cs/xylaz/entity/Barber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +66,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/cactus/Desktop/Xylaz/frontend/src/picture",
+    "last_opened_file_path": "/Users/cactus/Desktop/Xylaz/db/picture",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,6 +78,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/db/picture" />
       <recent name="$PROJECT_DIR$/frontend/src/picture" />
       <recent name="$PROJECT_DIR$/frontend/src/assets" />
     </key>
@@ -85,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730750687631</updated>
       <workItem from="1730750689037" duration="3745000" />
-      <workItem from="1731052255527" duration="41243000" />
+      <workItem from="1731052255527" duration="67771000" />
     </task>
     <servers />
   </component>

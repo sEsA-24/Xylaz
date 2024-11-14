@@ -24,7 +24,7 @@ const BarberList = () => {
                     >
                         <img
                             className="w-full h-60 object-cover bg-blue-50"
-                            src={barber.profilePicture}
+                            src={`http://localhost:8085/picture/${barber.profilePicture}`}
                             alt={barber.name}
                         />
                         <div className="p-4">

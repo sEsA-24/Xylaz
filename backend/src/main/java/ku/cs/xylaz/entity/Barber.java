@@ -14,6 +14,15 @@ import java.util.UUID;
 @Entity
 @Table(name = "barbers")
 public class Barber {
+    public Barber(String name, String specialty, int experience, String gender, String about, String profilePicture) {
+        this.name = name;
+        this.specialty = specialty;
+        this.experience = experience;
+        this.gender = gender;
+        this.about = about;
+        this.profilePicture = profilePicture;
+    }
+
     @Id
     @GeneratedValue
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")

@@ -63,9 +63,13 @@ const MyAppointments = () => {
         }
     };
     return (
-        <div>
+        <div className='mx-4 sm:mx-[10%] mt-5'>
+            <h1 className=" text-[50px] text-[#000000] font-bold leading-tight mb-3"   >
+                My appointment
+            </h1>
+            <div className="w-full border-t-[1px] border-gray-300 mt-5 mb-5"></div>
             {appointments.map((appointment, index) => (
-                <div className='grid grid-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-2 border-b' key={index}>
+                <div className='grid grid-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-2 border-b ' key={index}>
                     <div>
                         <img className='w-32 bg-indigo-50' src={appointment.barberProfilePicture} alt="" />
                     </div>
