@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
+import Navbar from '../components/NavbarSub';
 import { assets } from '../assets/assets';
 import axios from 'axios';
 import * as response from "autoprefixer";
@@ -18,9 +19,13 @@ const Appointment = () => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
   const [bookedAppointments, setBookedAppointments]=useState([]);
+  const [selectedService, setSelectedService] = useState(null);
+  const [price, setPrice] = useState("Please select an offer");
+  const [selectedOffer, setSelectedOffer] = useState(null);
 
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetch('http://localhost:8085/')
         .then(response => response.json())
         .then(data => {
@@ -78,10 +83,20 @@ const Appointment = () => {
 
   };
 
+  const handleSelectService = (service, servicePrice) => {
+    setSelectedService(service);
+    setPrice(servicePrice);
+    setSelectedOffer(service);
+  };
+
+
 
   const bookAppointment = async () => {
     if (!slotTime) {
       alert("Please choose an appointment time!");
+      return;
+    }if (!selectedOffer) {
+      alert("Please choose an offer!");
       return;
     }
 
@@ -96,7 +111,8 @@ const Appointment = () => {
       username: user,
       barberId: docId.toString(),
       appointmentDate: appointmentDate,
-      serviceType: "Cut"
+      serviceType: selectedOffer,
+      price: +price
     };
 
     try {
@@ -194,11 +210,12 @@ const Appointment = () => {
 
 
   return barbers && (
-      <div>
-        {/*-------Doctor Details-------*/}
+      <div className='md:mx-10 '>
+        <Navbar />
         <div className='flex flex-col sm:flex-row gap-4'>
           <div>
-            <img className='bg-primary w-full sm:max-w-72 rounded-lg' src={barbers.image} alt="" />
+            <img className='w-60 h-60 object-cover bg-blue-50 rounded-lg'
+                 src={`http://localhost:8085/picture/${barbers.profilePicture}`} alt="" />
           </div>
           <div className='flex-1 border border-gray-400 rounded-lg p-8 py-7 bg-white mx-2 sm:mx-0 mt-[-0px] sm:mx-0'>
             <p className='flex items-center gap-2 text-2xl font-medium text-gray-900'>
@@ -216,13 +233,41 @@ const Appointment = () => {
               <p className='text-sm text-gray-500 max-w-[700px] mt-1'>{barbers.about}</p>
             </div>
             <p className='text-gray-500 font-medium mt-4'>
-              Price: <span className='text-gray-600'>{"200 Bath"}</span>{/*docInfo.fees*/}
+              Price: <span className='text-gray-600'>{price} baht</span>{/*docInfo.fees*/}
             </p>
+          </div>
+        </div>
+        {/*-------offfer Slots-------*/}
+        <div className=' mt-[4%]  sm:pl-4 font-medium text-gray-700'>
+          <p>Special offers</p>
+          <div
+              className={`bg-white border border-gray-300 p-4 rounded-lg shadow-md w-60 text-center cursor-pointer hover:bg-gray-100 mt-4 ${selectedOffer === "Regular Haircut" ? 'bg-gray-200' : ''}`}
+              onClick={() => handleSelectService('Regular Haircut', '300')}
+          >
+            <p className="text-xl font-semibold text-gray-700">Regular Haircut</p>
+          </div>
+          <div
+              className={`bg-white border border-gray-300 p-4 rounded-lg shadow-md w-60 text-center cursor-pointer hover:bg-gray-100 mt-3 ${selectedOffer === "Haircut + Beard" ? 'bg-gray-200' : ''}`}
+              onClick={() => handleSelectService('Haircut + Beard', '350')}
+          >
+            <p className="text-xl font-semibold text-gray-700">Haircut + Beard</p>
+          </div>
+          <div
+              className={`bg-white border border-gray-300 p-4 rounded-lg shadow-md w-60 text-center cursor-pointer hover:bg-gray-100 mt-3 ${selectedOffer === "Haircut + Shampoo" ? 'bg-gray-200' : ''}`}
+              onClick={() => handleSelectService('Haircut + Shampoo', '400')}
+          >
+            <p className="text-xl font-semibold text-gray-700">Haircut + Shampoo</p>
+          </div>
+          <div
+              className={`bg-white border border-gray-300 p-4 rounded-lg shadow-md w-60 text-center cursor-pointer hover:bg-gray-100 mt-3 ${selectedOffer === "All" ? 'bg-gray-200' : ''}`}
+              onClick={() => handleSelectService('All', '450')}
+          >
+            <p className="text-xl font-semibold text-gray-700">All</p>
           </div>
         </div>
 
         {/*-------Booking Slots-------*/}
-        <div className='sm:ml-72 sm:pl-4 mt-4 font-medium text-gray-700'>
+        <div className="ml-[25%] mt-[-24%] mt-4 font-medium text-gray-700">
           <p>Booking slots</p>
           <div className='flex gap-3 items-center w-full overflow-x-scroll mt-4'>
             {docSlots.length > 0 && docSlots.map((item, index) => (

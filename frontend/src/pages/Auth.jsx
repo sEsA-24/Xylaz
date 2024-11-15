@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/NavbarSub';
 import axios from 'axios';
 
 const Auth = () => {
@@ -60,11 +61,15 @@ const Auth = () => {
   };
 
   return (
+      <div className='mx-4 sm:mx-[10%] mt-5'>
+        <Navbar />
       <form
           className="min-h-[80vh] flex items-center"
           onSubmit={state === "Sign Up" ? handleSignup : handleLogin}
       >
+
         <div className="flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-zinc-600 text-sm shadow-lg">
+
           <p className="text-2xl font-semibold">
             {state === "Sign Up" ? "Create Account" : "Login"}
           </p>
@@ -137,8 +142,10 @@ const Auth = () => {
             </span>
               </p>
           )}
+
         </div>
       </form>
+      </div>
   );
 };
 

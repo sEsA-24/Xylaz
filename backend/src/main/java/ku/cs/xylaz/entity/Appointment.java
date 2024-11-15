@@ -34,4 +34,6 @@ public class Appointment {
     private String status;
 
     private String serviceType;
+
+    private double price;
 }

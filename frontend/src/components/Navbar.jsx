@@ -102,10 +102,10 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <div className='flex items-center bg-[#0B192C]  px-12 py-2 rounded-full  md:block mr-[-25px] '>
+          <div className='flex items-center  px-12 py-2 rounded-full  md:block mr-[-25px] '>
             {
               token
-                  ? <div className='flex items-center gap-2 cursor-pointer group relative'>
+                  ? <div className='flex items-center bg-[#0B192C] gap-2 py-2 px-7 border-2 cursor-pointer group relative rounded-full mr-[-30px]'>
                     <img className='w-8 rounded-full' src={assets.profile_pic} alt=""/>
                     <span className='font-medium text-white '>{user}</span>
                     <img className='w-2.5' src={assets.dropdown_icon} alt=""/>
@@ -116,7 +116,7 @@ const Navbar = () => {
                       </div>
                     </div>
                   </div>
-                  : <button onClick={() => navigate('/signin')} className='border-2 bg-primary text-white font-semibold px-12 py-4 rounded-full font-light hidden md:block'>Login</button>
+                  : <button onClick={() => navigate('/signin')} className='border-2 bg-primary text-white font-semibold px-12 py-4 rounded-full font-light hidden md:block mr-[-30px]'>Login</button>
             }
             <img onClick={() => setShowMenu(true)} className='w-6 md:hidden' src={assets.menu_icon} alt=""/>
           </div>

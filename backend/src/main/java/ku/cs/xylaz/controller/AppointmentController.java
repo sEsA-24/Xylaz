@@ -78,6 +78,7 @@ public class AppointmentController {
                     appointmentData.put("member_id", appointment.getMember().getId().toString());
                     appointmentData.put("service_type", appointment.getServiceType());
                     appointmentData.put("appointment_date", appointment.getAppointmentDate());
+                    appointmentData.put("price", appointment.getPrice());
                     return appointmentData;
                 })
                 .collect(Collectors.toList());

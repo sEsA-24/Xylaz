@@ -27,8 +27,8 @@ const AllAppointments = () => {
                     <p>Appointment Date</p>
                     <p>Service Type</p>
                     <p>Status</p>
-                    <p>Barber ID</p>
-                    <p>Member ID</p>
+                    <p>Barber Name</p>
+                    <p>Member Name</p>
                 </div>
                 {appointments.length > 0 ? (
                     appointments.map((item, index) => (
@@ -40,8 +40,8 @@ const AllAppointments = () => {
                             <p>{item.appointment_date || 'N/A'}</p>
                             <p>{item.service_type || 'N/A'}</p>
                             <p>{item.status || 'N/A'}</p>
-                            <p>{item.barber_id || 'N/A'}</p>
-                            <p>{item.member_id || 'N/A'}</p>
+                            <p>{item.barberName || 'N/A'}</p>
+                            <p>{item.username || 'N/A'}</p>
                         </div>
                     ))
                 ) : (

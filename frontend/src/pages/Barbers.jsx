@@ -6,6 +6,7 @@ const Barbers = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // เรียกใช้ API เพื่อดึงข้อมูลบาร์เบอร์
     fetch('http://localhost:8085/')
         .then(response => response.json())
         .then(data => {
@@ -26,7 +27,8 @@ const Barbers = () => {
                       className="border border-blue-200 rounded-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-all duration-300"
                       key={index}
                   >
-                    <img className="w-full h-60 object-cover bg-blue-50" src={barber.profilePicture}  alt={barber.name} />
+                    <img className="w-full h-60 object-cover bg-blue-50"
+                         src={`http://localhost:8085/picture/${barber.profilePicture}`} alt={barber.profilePicture} />
                     <div className="p-4">
                       <div className="flex items-center gap-2 text-sm text-center text-green-500">
                         <p className="w-2 h-2 bg-green-500 rounded-full"></p>

@@ -50,6 +50,7 @@ public class AppointmentService {
         newAppointment.setAppointmentDate(appointmentDate);
         newAppointment.setStatus("Confirmed");
         newAppointment.setServiceType(request.getServiceType());
+        newAppointment.setPrice(request.getPrice());
 
         return appointmentRepository.save(newAppointment);
     }

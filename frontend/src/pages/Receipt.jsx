@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Navbar from '../components/NavbarSub';
 import axios from "axios";
 
 const Receipt = () => {
@@ -39,7 +40,10 @@ const Receipt = () => {
         return <p>Loading receipt...</p>;  // แสดงข้อความขณะรอข้อมูล
     }
     return (
+        <div className='mx-4 sm:mx-[10%] mt-5'>
+            <Navbar />
         <div className="flex flex-col items-center h-screen mt-15">
+
             <div className="w-[400px] h-[500px] bg-white rounded-lg shadow-[0px_4px_20px_rgba(0,0,0,0.15)] flex flex-col items-center p-6 mt-4">
                 <div className="w-12 h-12 bg-[#E5F4ED] rounded-full flex items-center justify-center mb-4 mt-5">
                     <img src="/src/picture/tick-circle.png" alt="tick" className="w-7 h-7" />
@@ -51,7 +55,7 @@ const Receipt = () => {
 
                 <div className="w-full mt-5 flex flex-col ">
                     <p className="text-gray-600 text-[13px] tracking-[0.5px] text-center">Total Payment</p>
-                    <h2 className="text-black text-[18px] font-semibold tracking-[1px] mt-1 text-center">200 Baht</h2>
+                    <h2 className="text-black text-[18px] font-semibold tracking-[1px] mt-1 text-center">{receipt.price} Baht</h2>
                 </div>
 
                 <div className="w-full mt-10 space-y-4">
@@ -84,7 +88,7 @@ const Receipt = () => {
                 Done
             </button>
         </div>
-
+        </div>
 
     );
 };

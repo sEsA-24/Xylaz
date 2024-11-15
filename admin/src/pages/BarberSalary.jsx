@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 const BarberSalary = () => {
     const { barber_id } = useParams();
     const [earnings, setEarnings] = useState([]);
+    const [name, setname] = useState();
     const token = localStorage.getItem('token'); // Get token from localStorage if available
 
     // Function to fetch appointment data
@@ -23,7 +24,9 @@ const BarberSalary = () => {
 
                     // Filter appointments for the specific barber_id
                     const barberAppointments = data.filter(appointment => appointment.barber_id === barber_id);
-
+                    if (barberAppointments.length > 0) {
+                        setname(barberAppointments[0].barberName); // เอาค่าของ 'name' จากอ็อบเจ็กต์ตัวแรกในอาเรย์
+                    }
                     const earningsByMonth = barberAppointments.reduce((acc, appointment) => {
                         if (appointment.status && appointment.status.trim().toLowerCase() === 'paid') {
                             const date = new Date(appointment.appointmentDate);
@@ -32,7 +35,8 @@ const BarberSalary = () => {
                                 if (!acc[monthYear]) {
                                     acc[monthYear] = { barberEarnings: 0, shopEarnings: 0 };
                                 }
-                                const totalAmount = appointment.amount || 200; // Use appointment amount or a default value
+                                const totalAmount = appointment.amount || appointment.price; // Use appointment amount or a default value
+                                console.error(appointment.barber_id);
                                 acc[monthYear].barberEarnings += totalAmount * 0.6; // Calculate 60% earnings
                                 acc[monthYear].shopEarnings += totalAmount * 0.4;  // Calculate 40% earnings
                             } else {
@@ -63,7 +67,8 @@ const BarberSalary = () => {
 
     return (
         <div className="p-5 bg-gray-100 min-h-screen flex flex-col items-center w-full">
-            <h2 className="text-gray-700 text-2xl font-semibold mb-6">Earnings for Barber {barber_id}</h2>
+            <h2 className="text-gray-700 text-2xl font-semibold mb-6">Earnings for Barber</h2>
+            <p className="text-gray-700 text-4 font-semibold mb-6 mr-[90%]">{name}</p>
             <div className="overflow-x-auto w-full max-w-screen-xl">
                 <table className="w-full bg-white rounded-lg shadow-lg overflow-hidden">
                     <thead>

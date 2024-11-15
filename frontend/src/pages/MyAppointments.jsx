@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/NavbarSub';
 import axios from "axios";
 
 const MyAppointments = () => {
@@ -64,14 +65,12 @@ const MyAppointments = () => {
     };
     return (
         <div className='mx-4 sm:mx-[10%] mt-5'>
-            <h1 className=" text-[50px] text-[#000000] font-bold leading-tight mb-3"   >
-                My appointment
-            </h1>
-            <div className="w-full border-t-[1px] border-gray-300 mt-5 mb-5"></div>
+            <Navbar />
             {appointments.map((appointment, index) => (
                 <div className='grid grid-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-2 border-b ' key={index}>
                     <div>
-                        <img className='w-32 bg-indigo-50' src={appointment.barberProfilePicture} alt="" />
+                        <img className='w-32 bg-indigo-50'
+                             src={`http://localhost:8085/picture/${appointment.barberProfilePicture}`} alt="" />
                     </div>
                     <div className='flex-1 text-sm text-zinc-600'>
                         <p className='text-neutral-800 font-semibold'>{appointment.barberName}</p>
@@ -112,7 +111,8 @@ const MyAppointments = () => {
                 <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-50'>
                     <div className='bg-yellow-300 p-5 rounded shadow-lg text-center'>
                         <img
-                            src="/src/picture/qr_code.png" // เปลี่ยนเส้นทางไปยังรูปการ์ตูนของคุณ
+                            // src="/src/picture/qr_code.png"
+                            src='http://localhost:8085/picture/qr_code.png'
                             alt="QR"
                             className='w-30 h-30 mb-4 mx-auto' // ขนาดและระยะห่างของรูป
                         />

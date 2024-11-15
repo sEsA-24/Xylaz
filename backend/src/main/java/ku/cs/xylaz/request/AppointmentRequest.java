@@ -10,5 +10,6 @@ public class AppointmentRequest {
     private UUID barberId;
     private String appointmentDate;
     private String serviceType;
+    private double price;
 
 }
