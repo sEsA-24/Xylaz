@@ -22,11 +22,10 @@ public class Barber {
         this.about = about;
         this.profilePicture = profilePicture;
     }
-
     @Id
     @GeneratedValue
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "barber_id")
+    @Column(name = "barber_id", updatable = false, nullable = false)
     private UUID id;
 
     @Column(nullable = false)

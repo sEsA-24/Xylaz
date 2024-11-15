@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const BarberList = () => {
     const [barbers, setBarbers] = useState([]);
@@ -18,9 +19,10 @@ const BarberList = () => {
 
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pt-5 gap-y-6">
                 {barbers.map((barber, index) => (
-                    <div
-                        className="border border-blue-200 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300"
+                    <Link
+                        to={`/barber-salary/${barber.barber_id}`}
                         key={index}
+                        className="border border-blue-200 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300"
                     >
                         <img
                             className="w-full h-60 object-cover bg-blue-50"
@@ -35,7 +37,7 @@ const BarberList = () => {
                             <p className="text-gray-900 text-lg font-medium">{barber.name}</p>
                             <p className="text-gray-600 text-sm">{barber.gender}</p>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

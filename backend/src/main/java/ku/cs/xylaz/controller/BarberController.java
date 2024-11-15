@@ -92,6 +92,7 @@ public ResponseEntity<Barber> addBarber(
     }
 
 
+
     @GetMapping("/")
     public List<Map<String, Object>> getAllBarberData() {
         return barberRepository.findAll().stream()
